@@ -2,10 +2,13 @@
   font-family: Inter;
   src: url(./UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2);
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 .bg-wisdora-navy {
   color: #1a1d2e;
