@@ -5,6 +5,7 @@
 body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .bg-wisdora-navy {
   color: #1a1d2e;
