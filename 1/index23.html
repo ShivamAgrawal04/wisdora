@@ -1,0 +1,1511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Wisdora - Custom eLearning Solutions | High-Performance LMS Development
+    </title>
+    <meta
+      name="description"
+      content="Build custom eLearning platforms with Wisdora. Secure LMS development, video DRM, and scalable learning solutions for educators and enterprises."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              "space-grotesk": ["Space Grotesk", "monospace"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "fade-in-up": "fadeInUp 0.8s ease-out",
+              "fade-in-left": "slideInLeft 0.8s ease-out",
+              "fade-in-right": "slideInRight 0.8s ease-out",
+              "pulse-slow": "pulse 2s infinite",
+              "spin-slow": "spin 3s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              fadeInUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              slideInLeft: {
+                from: { opacity: "0", transform: "translateX(-30px)" },
+                to: { opacity: "1", transform: "translateX(0)" },
+              },
+              slideInRight: {
+                from: { opacity: "0", transform: "translateX(30px)" },
+                to: { opacity: "1", transform: "translateX(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .bg-gradient-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .bg-gradient-cta {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .glass-dark {
+        background: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .shadow-glow {
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+      }
+      .shadow-glow-lg {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/95 backdrop-blur-xl border-b border-gray-200/50 z-50 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-2">
+            <div class="flex items-center">
+              <span
+                class="font-space-grotesk font-bold text-xl bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+                >Wisdora</span
+              >
+              <div
+                class="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full ml-1 animate-pulse-slow"
+              ></div>
+            </div>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-600 after:transition-all after:duration-300 hover:after:w-full"
+              >Services</a
+            >
+            <a
+              href="#features"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-600 after:transition-all after:duration-300 hover:after:w-full"
+              >Features</a
+            >
+            <a
+              href="#industries"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-600 after:transition-all after:duration-300 hover:after:w-full"
+              >Industries</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 relative after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-600 after:transition-all after:duration-300 hover:after:w-full"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden flex flex-col space-y-1 p-2">
+            <span
+              class="w-6 h-0.5 bg-gray-600 transition-all duration-300"
+            ></span>
+            <span
+              class="w-6 h-0.5 bg-gray-600 transition-all duration-300"
+            ></span>
+            <span
+              class="w-6 h-0.5 bg-gray-600 transition-all duration-300"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+      <!-- Background -->
+      <div class="absolute inset-0 bg-gradient-hero">
+        <div class="absolute inset-0 bg-black/20"></div>
+      </div>
+
+      <!-- Floating Shapes -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute w-96 h-96 bg-white/10 rounded-full top-20 -left-20 animate-float"
+          style="animation-delay: 0s"
+        ></div>
+        <div
+          class="absolute w-64 h-64 bg-white/10 rounded-full top-2/3 -right-20 animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute w-48 h-48 bg-white/10 rounded-full bottom-32 left-1/2 animate-float"
+          style="animation-delay: 4s"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Hero Text -->
+          <div class="text-white">
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in-left"
+            >
+              <i class="fas fa-rocket text-green-400"></i>
+              <span class="text-sm font-medium"
+                >Custom eLearning Platform Development</span
+              >
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-space-grotesk font-bold mb-6 animate-fade-in-left"
+              style="animation-delay: 0.2s"
+            >
+              Build, Launch & Scale
+              <span class="block text-gradient"
+                >Powerful eLearning Platforms</span
+              >
+              — Faster, Secure & Fully Custom
+            </h1>
+
+            <!-- Subtitle -->
+            <p
+              class="text-lg text-gray-200 mb-8 max-w-xl animate-fade-in-left"
+              style="animation-delay: 0.4s"
+            >
+              From custom LMS & eLearning apps to engaging learning content and
+              secure video delivery, Wisdora helps educators, institutions, and
+              enterprises deliver high-impact digital learning experiences at
+              scale.
+            </p>
+
+            <!-- Trust Signals -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 animate-fade-in-left"
+              style="animation-delay: 0.6s"
+            >
+              <div
+                class="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 transition-all duration-300 hover:bg-white/15"
+              >
+                <div
+                  class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-check-circle text-green-400 text-sm"></i>
+                </div>
+                <span class="text-sm font-medium"
+                  >Custom LMS & App Development</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 transition-all duration-300 hover:bg-white/15"
+              >
+                <div
+                  class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-check-circle text-green-400 text-sm"></i>
+                </div>
+                <span class="text-sm font-medium"
+                  >eLearning Content & Course Creation</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 transition-all duration-300 hover:bg-white/15"
+              >
+                <div
+                  class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-check-circle text-green-400 text-sm"></i>
+                </div>
+                <span class="text-sm font-medium"
+                  >Secure Video Hosting & DRM</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 transition-all duration-300 hover:bg-white/15"
+              >
+                <div
+                  class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-check-circle text-green-400 text-sm"></i>
+                </div>
+                <span class="text-sm font-medium"
+                  >Web, Android & iOS Platforms</span
+                >
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div
+              class="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-left"
+              style="animation-delay: 0.8s"
+            >
+              <button
+                class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-glow flex items-center justify-center gap-2"
+              >
+                <span>Get Free Consultation</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+              <button
+                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <i class="fas fa-play"></i>
+                <span>Watch Demo</span>
+              </button>
+            </div>
+
+            <!-- Stats -->
+            <div
+              class="grid grid-cols-3 gap-6 animate-fade-in-left"
+              style="animation-delay: 1s"
+            >
+              <div class="text-center">
+                <div class="text-2xl font-bold">500+</div>
+                <div class="text-sm text-gray-300">Platforms Built</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold">1M+</div>
+                <div class="text-sm text-gray-300">Learners Served</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold">99.9%</div>
+                <div class="text-sm text-gray-300">Uptime</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lead Form -->
+          <div class="animate-fade-in-right" style="animation-delay: 0.4s">
+            <div
+              class="bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-glow-lg"
+            >
+              <div class="text-center mb-6">
+                <h3
+                  class="text-xl font-space-grotesk font-bold text-gray-900 mb-2"
+                >
+                  Start Your Project
+                </h3>
+                <p class="text-gray-600">Get expert consultation in 24 hours</p>
+              </div>
+
+              <form id="consultation-form" class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="John Smith"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Work Email</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="john@company.com"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="+1 (555) 123-4567"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Organization</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="School/University/Company"
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Service Needed</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  >
+                    <option value="">Select Service</option>
+                    <option value="lms">Custom LMS Development</option>
+                    <option value="app">eLearning App Development</option>
+                    <option value="content">Course Content Creation</option>
+                    <option value="video">Video Security & DRM</option>
+                    <option value="migration">
+                      Platform Migration & Scaling
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Monthly Learners</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  >
+                    <option value="">Select Volume</option>
+                    <option value="100-500">100-500 learners</option>
+                    <option value="500-2000">500-2,000 learners</option>
+                    <option value="2000-10000">2,000-10,000 learners</option>
+                    <option value="10000+">10,000+ learners</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-gradient-primary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-glow flex items-center justify-center gap-2"
+                >
+                  <span>Book Free Strategy Call</span>
+                  <i class="fas fa-calendar-check"></i>
+                </button>
+              </form>
+
+              <div class="mt-6 pt-6 border-t border-gray-200">
+                <div
+                  class="flex items-center justify-center gap-2 bg-green-50 text-green-700 px-3 py-2 rounded-lg mb-3"
+                >
+                  <i class="fas fa-lock text-sm"></i>
+                  <span class="text-sm font-medium">256-bit SSL Encrypted</span>
+                </div>
+                <p
+                  class="text-center text-gray-500 text-sm flex items-center justify-center gap-2"
+                >
+                  <i class="fas fa-info-circle"></i>
+                  No commitment • Expert consultation • Custom quote
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-cog"></i>
+            Our Services
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl font-space-grotesk font-bold text-gray-900 mb-4"
+          >
+            Complete eLearning Solutions
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to build world-class learning platforms
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Service Card 1 -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors duration-300"
+            >
+              <i class="fas fa-graduation-cap text-white"></i>
+            </div>
+            <h3 class="text-xl font-space-grotesk font-bold text-gray-900 mb-3">
+              Custom LMS Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              White-label learning management systems tailored to your brand and
+              teaching methodology.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Student & Instructor Dashboards</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Advanced Course Management</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Assessment & Certification Tools</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Payment & Subscription Management</span>
+              </div>
+            </div>
+            <button
+              class="w-full bg-gray-50 hover:bg-blue-50 text-blue-600 border border-blue-200 hover:border-blue-300 py-2 px-4 rounded-lg font-medium transition-all duration-300"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <!-- Service Card 2 (Featured) -->
+          <div
+            class="bg-white border-2 border-blue-200 rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 relative"
+          >
+            <div
+              class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold"
+            >
+              Most Popular
+            </div>
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-mobile-alt text-white"></i>
+            </div>
+            <h3 class="text-xl font-space-grotesk font-bold text-gray-900 mb-3">
+              eLearning App Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Native Android, iOS & web apps for seamless learning experiences
+              across all devices.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Cross-platform Compatibility</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Offline Learning Support</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Real-time Push Notifications</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>High-performance Streaming</span>
+              </div>
+            </div>
+            <button
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors duration-300"
+            >
+              <i class="fas fa-video text-white"></i>
+            </div>
+            <h3 class="text-xl font-space-grotesk font-bold text-gray-900 mb-3">
+              eLearning Content Creation
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Engaging, interactive content designed for maximum learner
+              engagement and retention.
+            </p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Micro-learning Modules</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Gamified Learning Experiences</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Scenario-based Training</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <i class="fas fa-check text-green-500"></i>
+                <span>Video Production & Editing</span>
+              </div>
+            </div>
+            <button
+              class="w-full bg-gray-50 hover:bg-blue-50 text-blue-600 border border-blue-200 hover:border-blue-300 py-2 px-4 rounded-lg font-medium transition-all duration-300"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Section -->
+    <section
+      class="security bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 text-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-shield-alt"></i>
+            Enterprise Security
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-space-grotesk font-bold mb-4">
+            Bank-Level Video Content Protection
+          </h2>
+          <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+            Advanced DRM and streaming security to protect your intellectual
+            property
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-shield-alt text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Encrypted Streaming
+            </h3>
+            <p class="text-slate-300 text-sm">
+              End-to-end encryption with AES-256 bit security for all video
+              content delivery.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-lock text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Dynamic Watermarking
+            </h3>
+            <p class="text-slate-300 text-sm">
+              Real-time watermarking prevents unauthorized sharing and piracy
+              attempts.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-ban text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Screen Recording Prevention
+            </h3>
+            <p class="text-slate-300 text-sm">
+              Advanced detection and blocking of screen recording and screenshot
+              attempts.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-mobile-screen text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Device Control
+            </h3>
+            <p class="text-slate-300 text-sm">
+              Limited device access and geo-blocking for enhanced content
+              security.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-tachometer-alt text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Adaptive Streaming
+            </h3>
+            <p class="text-slate-300 text-sm">
+              Multi-bitrate streaming ensures optimal performance across all
+              network conditions.
+            </p>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-clock text-green-400"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold mb-2">
+              Content Expiration
+            </h3>
+            <p class="text-slate-300 text-sm">
+              Time-based access controls and automatic content expiration
+              policies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+            >
+              <i class="fas fa-star"></i>
+              Why Choose Wisdora
+            </div>
+            <h2
+              class="text-3xl sm:text-4xl font-space-grotesk font-bold text-gray-900 mb-4"
+            >
+              Built for Scale, Security & Real Business Growth
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Unlike generic LMS platforms, we build custom solutions that grow
+              with your business and protect your content.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-dollar-sign text-white"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg font-space-grotesk font-bold text-gray-900 mb-2"
+                  >
+                    100% Ownership
+                  </h4>
+                  <p class="text-gray-600">
+                    No revenue sharing or hidden fees. Complete control over
+                    your platform.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-code text-white"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg font-space-grotesk font-bold text-gray-900 mb-2"
+                  >
+                    Fully Customizable
+                  </h4>
+                  <p class="text-gray-600">
+                    Every feature tailored to your specific learning model and
+                    brand identity.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-rocket text-white"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg font-space-grotesk font-bold text-gray-900 mb-2"
+                  >
+                    Enterprise Scalable
+                  </h4>
+                  <p class="text-gray-600">
+                    Built to handle 100 to 100,000+ concurrent learners without
+                    performance issues.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-globe text-white"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-lg font-space-grotesk font-bold text-gray-900 mb-2"
+                  >
+                    Global Compliance
+                  </h4>
+                  <p class="text-gray-600">
+                    GDPR, CCPA, and Indian data protection regulations
+                    compliant.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-1"
+                >
+                  99.9%
+                </div>
+                <div class="text-sm text-gray-600">Platform Uptime</div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-1"
+                >
+                  < 2s
+                </div>
+                <div class="text-sm text-gray-600">Load Time</div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-1"
+                >
+                  24/7
+                </div>
+                <div class="text-sm text-gray-600">Support</div>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent mb-1"
+                >
+                  100%
+                </div>
+                <div class="text-sm text-gray-600">Custom Code</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process bg-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-route"></i>
+            Our Process
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl font-space-grotesk font-bold text-gray-900 mb-4"
+          >
+            How We Build Your Success
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Proven 6-step methodology for delivering high-impact eLearning
+            platforms
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-search text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              01
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Discovery & Analysis
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Deep dive into your requirements, target audience, and business
+              objectives.
+            </p>
+          </div>
+
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-pencil-ruler text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              02
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Architecture & Design
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Creating scalable architecture and user experience optimized for
+              learning outcomes.
+            </p>
+          </div>
+
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              03
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Development & Integration
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Building robust platforms with seamless third-party integrations.
+            </p>
+          </div>
+
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-vial text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              04
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Testing & QA
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Comprehensive testing across devices, browsers, and load
+              conditions.
+            </p>
+          </div>
+
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-rocket text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              05
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Launch & Deployment
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Smooth rollout with data migration and user training support.
+            </p>
+          </div>
+
+          <div
+            class="relative bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 relative z-10"
+            >
+              <i class="fas fa-headset text-white"></i>
+            </div>
+            <div
+              class="absolute top-6 left-6 w-8 h-8 bg-white border-4 border-blue-500 rounded-full flex items-center justify-center text-xs font-bold text-blue-600"
+            >
+              06
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Support & Optimization
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Ongoing maintenance, updates, and performance optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="industries bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-building"></i>
+            Industries We Serve
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl font-space-grotesk font-bold text-gray-900 mb-4"
+          >
+            Trusted by Leading Education Organizations
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Custom solutions for diverse learning environments and business
+            models
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-graduation-cap text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Coaching Institutes
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Competitive exam prep, skill development, and specialized training
+              centers.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-university text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Universities & Colleges
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Campus-wide learning platforms, online degree programs, and hybrid
+              education.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-building text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Corporate Training
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Employee development, compliance training, and leadership
+              programs.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-tools text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Skill Development
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Government skill initiatives, vocational training, and career
+              development.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-clipboard-check text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Test Preparation
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Standardized test prep, certification courses, and exam
+              preparation platforms.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-certificate text-white"></i>
+            </div>
+            <h3 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Professional Certification
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Industry certifications, continuing education, and professional
+              development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features bg-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div
+            class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4"
+          >
+            <i class="fas fa-star"></i>
+            Platform Features
+          </div>
+          <h2
+            class="text-3xl sm:text-4xl font-space-grotesk font-bold text-gray-900 mb-4"
+          >
+            Everything You Need to Succeed
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comprehensive feature set designed for modern eLearning excellence
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-video text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Live Classes & Webinars
+            </h4>
+            <p class="text-gray-600 text-sm">
+              HD video streaming with interactive features and real-time
+              engagement tools.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-users-cog text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Advanced User Management
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Role-based access control, bulk operations, and automated user
+              workflows.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-chart-line text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Analytics & Insights
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Detailed learning analytics, engagement metrics, and performance
+              dashboards.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-language text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Multi-language Support
+            </h4>
+            <p class="text-gray-600 text-sm">
+              RTL support, translation management, and localized learning
+              experiences.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-credit-card text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Payment Integration
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Multiple payment gateways, subscription management, and coupon
+              systems.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-plug text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Third-party Integrations
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Zoom, Google Analytics, CRM systems, and enterprise software
+              integration.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-mobile-alt text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Mobile Learning
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Responsive design, mobile apps, and offline learning capabilities.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="fas fa-certificate text-white"></i>
+            </div>
+            <h4 class="text-lg font-space-grotesk font-bold text-gray-900 mb-2">
+              Certification System
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Automated certificates, badges, and credential verification
+              systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta bg-gradient-primary py-20 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-space-grotesk font-bold mb-4">
+            Ready to Build Your Dream eLearning Platform?
+          </h2>
+          <p class="text-lg text-blue-100 mb-8">
+            Join hundreds of successful education businesses who've transformed
+            their learning delivery with Wisdora.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <div
+              class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
+            >
+              <i class="fas fa-check text-green-400"></i>
+              <span>Free consultation & custom quote</span>
+            </div>
+            <div
+              class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
+            >
+              <i class="fas fa-check text-green-400"></i>
+              <span>30-day development timeline</span>
+            </div>
+            <div
+              class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
+            >
+              <i class="fas fa-check text-green-400"></i>
+              <span>6-month support included</span>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-6"
+          >
+            <button
+              class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+            >
+              <span>Start Your Project Today</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="text-blue-100 flex items-center gap-2">
+              <i class="fas fa-info-circle"></i>
+              No upfront costs • Flexible payment terms • 100% satisfaction
+              guarantee
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-5 gap-8 mb-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <span
+                class="font-space-grotesk font-bold text-xl bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+                >Wisdora</span
+              >
+              <div
+                class="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
+              ></div>
+            </div>
+            <p class="text-slate-300 mb-6 max-w-sm">
+              Building the future of eLearning platforms with custom solutions
+              for modern education.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Services</h4>
+            <div class="space-y-2">
+              <a
+                href="#services"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Custom LMS Development</a
+              >
+              <a
+                href="#services"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >eLearning App Development</a
+              >
+              <a
+                href="#services"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Content Creation</a
+              >
+              <a
+                href="#services"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Video Security & DRM</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Industries</h4>
+            <div class="space-y-2">
+              <a
+                href="#industries"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Coaching Institutes</a
+              >
+              <a
+                href="#industries"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Universities</a
+              >
+              <a
+                href="#industries"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Corporate Training</a
+              >
+              <a
+                href="#industries"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Skill Development</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <div class="space-y-2">
+              <a
+                href="#about"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >About Us</a
+              >
+              <a
+                href="#careers"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Careers</a
+              >
+              <a
+                href="#blog"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Blog</a
+              >
+              <a
+                href="#contact"
+                class="text-slate-300 hover:text-blue-400 transition-colors duration-300 text-sm"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4"
+          >
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <p class="text-slate-400 text-sm">
+                &copy; 2024 Wisdora. All rights reserved.
+              </p>
+              <div class="flex gap-6">
+                <a
+                  href="#privacy"
+                  class="text-slate-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="#terms"
+                  class="text-slate-400 hover:text-blue-400 transition-colors duration-300 text-sm"
+                  >Terms of Service</a
+                >
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div
+                class="flex items-center gap-2 bg-slate-800 rounded-lg px-3 py-1"
+              >
+                <i class="fas fa-shield-alt text-green-400"></i>
+                <span class="text-xs text-slate-300">SOC 2 Compliant</span>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-slate-800 rounded-lg px-3 py-1"
+              >
+                <i class="fas fa-lock text-green-400"></i>
+                <span class="text-xs text-slate-300">GDPR Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
