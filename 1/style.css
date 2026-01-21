@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #0ea5e9;
+}
+
+/* Hero Animation Canvas */
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input styling */
+.form-input {
+  transition: all 0.2s;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+:root {
+  --primary-color: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-light: #f9fafb;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Hero Section Animation Background */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.1) 0%,
+    rgba(99, 102, 241, 0.05) 100%
+  );
+  animation: float 20s infinite linear;
+}
+
+.floating-shape:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.floating-shape:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  right: 10%;
+  animation-delay: -5s;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(34, 197, 94, 0.05) 100%
+  );
+}
+
+.floating-shape:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 15%;
+  animation-delay: -10s;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 158, 11, 0.1) 0%,
+    rgba(251, 191, 36, 0.05) 100%
+  );
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, 30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 60px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-20px, 30px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Interactive Card Hover Effects */
+.feature-card,
+.solution-card,
+.process-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.feature-card:hover,
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary-light);
+}
+
+/* Form Styles */
+.form-input {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  animation: progressAnimation 1.5s ease-in-out;
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* FAQ Accordion */
+.faq-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 1.25rem 0;
+  position: relative;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  padding-bottom: 1.25rem;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+/* Staggered Animation for Cards */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.stagger-animation > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-animation > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-animation > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-animation > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stagger-animation > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stagger-animation > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.delay-100 {
+  transition-delay: 0.1s;
+}
+.delay-200 {
+  transition-delay: 0.2s;
+}
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(20px, -30px) rotate(5deg);
+  }
+}
+@keyframes floatMedium {
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, 20px) rotate(-10deg);
+  }
+}
+.floating-shape-1 {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+.floating-shape-2 {
+  animation: floatMedium 15s ease-in-out infinite;
+}
+
+.faq-content {
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+.faq-content.open {
+  max-height: 500px;
+}
+
+:root {
+  --orbit-radius-desktop: 220px;
+  --orbit-radius-mobile: 130px;
+}
+
+.integration-icon-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px; /* Constrain width so text wraps if needed */
+  /* Starting position logic */
+  transform: rotate(calc(var(--i) * 72deg))
+    translateY(calc(-1 * var(--orbit-radius-desktop)))
+    rotate(calc(var(--i) * -72deg));
+  animation: rotateOrbit 25s linear infinite;
+}
+
+.icon-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.icon-box i {
+  font-size: 2rem;
+  display: block;
+}
+
+.integration-label {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  font-weight: 500;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+/* Orbit Animation */
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(calc(var(--i) * 72deg))
+      translateY(calc(-1 * var(--orbit-radius-desktop)))
+      rotate(calc(var(--i) * -72deg));
+  }
+  to {
+    transform: rotate(calc(var(--i) * 72deg + 360deg))
+      translateY(calc(-1 * var(--orbit-radius-desktop)))
+      rotate(calc(var(--i) * -72deg - 360deg));
+  }
+}
+
+/* Interaction */
+
+.integration-icon-wrapper:hover .icon-box {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .integration-icon-wrapper {
+    width: 100px;
+    /* Update transform to use mobile radius */
+    transform: rotate(calc(var(--i) * 72deg))
+      translateY(calc(-1 * var(--orbit-radius-mobile)))
+      rotate(calc(var(--i) * -72deg));
+    animation-name: rotateOrbitMobile;
+  }
+
+  .icon-box {
+    padding: 10px;
+  }
+
+  .icon-box i {
+    font-size: 1.5rem;
+  }
+
+  .integration-label {
+    font-size: 0.7rem;
+  }
+
+  @keyframes rotateOrbitMobile {
+    from {
+      transform: rotate(calc(var(--i) * 72deg))
+        translateY(calc(-1 * var(--orbit-radius-mobile)))
+        rotate(calc(var(--i) * -72deg));
+    }
+    to {
+      transform: rotate(calc(var(--i) * 72deg + 360deg))
+        translateY(calc(-1 * var(--orbit-radius-mobile)))
+        rotate(calc(var(--i) * -72deg - 360deg));
+    }
+  }
+}
