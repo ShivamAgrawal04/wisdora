@@ -11,7 +11,8 @@
       href="./assets/images/img4.avif"
       fetchpriority="high"
     />
-    <link rel="preload" href="./assets/output.css" as="style" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="preload" href="./assets/output.css" as="style" /> -->
     <link
       rel="stylesheet"
       href="./assets/output.css"
@@ -665,93 +666,75 @@
       </div>
     </section>
 
-    <section class="py-24 bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 reveal reveal-fadeup">
-          <h2
-            class="text-sm font-bold text-[#FF7235] uppercase tracking-[0.3em] mb-4"
-          >
-            The Wisdora Advantage
-          </h2>
-          <h3 class="text-4xl md:text-5xl font-bold text-[#1A1D2E]">
-            Built for Scale, Security & Real Business Use
-          </h3>
-        </div>
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- VISUAL -->
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+              alt="Enterprise learning platform"
+              class="rounded-3xl shadow-2xl"
+            />
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="reveal delay-100 card-interaction p-8 border border-slate-100 rounded-3xl bg-slate-50 transition-all hover:shadow-2xl hover:bg-white hover:-translate-y-1"
-          >
-            <div class="text-[#FF7235] text-3xl mb-6">
-              <i class="fas fa-hand-holding-usd"></i>
-            </div>
-            <h4 class="text-xl font-bold text-[#1A1D2E] mb-3">
-              No revenue sharing
-            </h4>
-            <p class="text-slate-600 leading-relaxed">
-              You keep 100% ownership of your earnings. No hidden transaction
-              fees or platform cuts.
-            </p>
+            <!-- Accent Shape -->
+            <div
+              class="absolute -bottom-8 -right-8 w-40 h-40 bg-[#FF7235] opacity-20 blur-3xl rounded-full"
+            ></div>
           </div>
 
-          <div
-            class="reveal delay-200 card-interaction p-8 border border-slate-100 rounded-3xl bg-slate-50 transition-all hover:shadow-2xl hover:bg-white hover:-translate-y-1"
-          >
-            <div class="text-[#FF7235] text-3xl mb-6">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h4 class="text-xl font-bold text-[#1A1D2E] mb-3">
-              Fully customizable
-            </h4>
-            <p class="text-slate-600 leading-relaxed">
-              No template lock-in. We build the platform to fit your brand
-              identity and workflow.
-            </p>
-          </div>
+          <!-- CONTENT -->
+          <div>
+            <span
+              class="text-sm font-semibold uppercase tracking-wider text-[#FF7235]"
+            >
+              Why Wisdora
+            </span>
 
-          <div
-            class="reveal delay-300 card-interaction p-8 border border-slate-100 rounded-3xl bg-slate-50 transition-all hover:shadow-2xl hover:bg-white hover:-translate-y-1"
-          >
-            <div class="text-[#FF7235] text-3xl mb-6">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h4 class="text-xl font-bold text-[#1A1D2E] mb-3">
-              Scales with you
-            </h4>
-            <p class="text-slate-600 leading-relaxed">
-              Infrastructure built to grow from 100 to 100,000+ learners without
-              performance dips.
-            </p>
-          </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-[#1A1D2E] mt-4 mb-8">
+              Built for Scale, Security & Real Business Use
+            </h2>
 
-          <div
-            class="reveal delay-400 card-interaction p-8 border border-slate-100 rounded-3xl bg-slate-50 transition-all hover:shadow-2xl hover:bg-white hover:-translate-y-1"
-          >
-            <div class="text-[#FF7235] text-3xl mb-6">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <h4 class="text-xl font-bold text-[#1A1D2E] mb-3">
-              Hybrid Delivery
-            </h4>
-            <p class="text-slate-600 leading-relaxed">
-              One engine that supports live interaction, recorded courses, and
-              hybrid models effortlessly.
-            </p>
-          </div>
+            <div class="space-y-4 text-slate-700">
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span
+                  >Tailored to your specific business and training needs</span
+                >
+              </div>
 
-          <div
-            class="reveal delay-400 card-interaction p-8 border border-slate-100 rounded-3xl bg-slate-50 transition-all hover:shadow-2xl hover:bg-white hover:-translate-y-1"
-          >
-            <div class="text-[#FF7235] text-3xl mb-6">
-              <i class="fas fa-check-double"></i>
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span>Fully customizable — no rigid templates</span>
+              </div>
+
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span>Designed to scale with your organization</span>
+              </div>
+
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span
+                  >Supports instructor-led, self-paced & hybrid learning</span
+                >
+              </div>
+
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span
+                  >Compliance-ready architecture for regulated industries</span
+                >
+              </div>
+
+              <div class="flex gap-3">
+                <i class="fas fa-check text-[#FF7235] mt-1"></i>
+                <span
+                  >Ease of business through structured collaboration and
+                  transparent engagement</span
+                >
+              </div>
             </div>
-            <h4 class="text-xl font-bold text-[#1A1D2E] mb-3">
-              Compliance Ready
-            </h4>
-            <p class="text-slate-600 leading-relaxed">
-              Designed for Indian compliance requirements and optimized for
-              global delivery standards.
-            </p>
           </div>
         </div>
       </div>
@@ -960,96 +943,178 @@
       </div>
     </section>
 
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16">
-          <div>
+    <section class="py-20 md:py-28 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <!-- Heading -->
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-4 mb-6">
+            <span class="h-1 w-12 bg-[#FF7235] rounded-full"></span>
             <h3
-              class="text-2xl font-bold text-[#1A1D2E] mb-8 flex items-center gap-3 reveal reveal-fadeup"
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A1D2E] tracking-tight"
             >
-              <span class="w-8 h-1 bg-[#FF7235] rounded-full"></span>
               Industries We Support
             </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-100"
-              >
-                <i class="fas fa-graduation-cap text-[#FF7235] w-5"></i>
-                Coaching Institutes
-              </div>
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-200"
-              >
-                <i class="fas fa-university text-[#FF7235] w-5"></i>
-                Universities & Colleges
-              </div>
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-300"
-              >
-                <i class="fas fa-user-tie text-[#FF7235] w-5"></i> Corporate
-                Training
-              </div>
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-100"
-              >
-                <i class="fas fa-pencil-alt text-[#FF7235] w-5"></i> Skill
-                Development
-              </div>
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-200"
-              >
-                <i class="fas fa-book-open text-[#FF7235] w-5"></i> Test Prep &
-                Exams
-              </div>
-              <div
-                class="p-4 rounded-xl border border-slate-100 flex items-center gap-3 text-slate-600 font-medium hover:bg-slate-50 reveal delay-300"
-              >
-                <i class="fas fa-award text-[#FF7235] w-5"></i> Professional
-                Certs
-              </div>
-            </div>
+            <span class="h-1 w-12 bg-[#FF7235] rounded-full"></span>
           </div>
-
-          <div
-            class="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden reveal delay-100"
+          <p
+            class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-light"
           >
-            <h3 class="text-2xl font-bold mb-8 relative z-10">
-              Platform Features
-            </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Live low-latency
-                classes
+            Scalable learning solutions for industries where training and
+            knowledge delivery truly matter.
+          </p>
+        </div>
+
+        <!-- Marquee -->
+        <div class="relative">
+          <div class="marquee">
+            <div class="marquee-track">
+              <!-- ITEM -->
+              <div class="pill">
+                <i class="fas fa-landmark"></i>
+                <span>BFSI</span>
+                <span class="desc"
+                  >(Banking, Financial Services & Insurance)</span
+                >
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Course & batch
-                management
+
+              <div class="pill">
+                <i class="fas fa-shopping-basket"></i>
+                <span>FMCG & Consumer Goods</span>
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Role-based access
+
+              <div class="pill">
+                <i class="fas fa-store-alt"></i>
+                <span>Retail & E-commerce</span>
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Multi-language
-                support
+
+              <div class="pill">
+                <i class="fas fa-flask"></i>
+
+                <span>Pharmaceutical & Life Sciences</span>
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Payment integrations
+
+              <div class="pill">
+                <i class="fas fa-heartbeat"></i>
+                <span>Healthcare & Medical Services</span>
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Analytics &
-                Dashboards
+
+              <!-- DUPLICATE FOR INFINITE LOOP -->
+              <div class="pill">
+                <i class="fas fa-landmark"></i>
+                <span>BFSI</span>
+                <span class="desc"
+                  >(Banking, Financial Services & Insurance)</span
+                >
               </div>
-              <div class="flex items-center gap-2 text-sm text-slate-400">
-                <i class="fas fa-check text-[#FF7235]"></i> Third-party
-                (Zoom/CRM)
+
+              <div class="pill">
+                <i class="fas fa-shopping-basket"></i>
+                <span>FMCG & Consumer Goods</span>
+              </div>
+
+              <div class="pill">
+                <i class="fas fa-store-alt"></i>
+                <span>Retail & E-commerce</span>
+              </div>
+
+              <div class="pill">
+                <i class="fas fa-flask-vial"></i>
+                <span>Pharmaceutical & Life Sciences</span>
+              </div>
+
+              <div class="pill">
+                <i class="fas fa-heartbeat"></i>
+                <span>Healthcare & Medical Services</span>
               </div>
             </div>
-            <div
-              class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#FF7235] opacity-20 blur-3xl"
-            ></div>
           </div>
         </div>
       </div>
+
+      <!-- Styles -->
+      <style>
+        .marquee {
+          overflow: hidden;
+          mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+          );
+        }
+
+        .marquee-track {
+          display: flex;
+          gap: 1.5rem;
+          width: max-content;
+          animation: marquee-scroll 40s linear infinite;
+        }
+
+        .marquee:hover .marquee-track {
+          animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        .pill {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin: 2rem 0;
+          padding: 1rem 1.75rem;
+          border-radius: 9999px;
+          background: linear-gradient(to right, #fff7ed, #ffffff);
+          border: 1px solid rgba(255, 114, 53, 0.25);
+          box-shadow: 0 10px 30px rgba(255, 114, 53, 0.12);
+          font-weight: 600;
+          color: #1a1d2e;
+          white-space: nowrap;
+          backdrop-filter: blur(6px);
+          transition: all 0.35s ease;
+        }
+
+        .pill i {
+          font-size: 1.4rem;
+          color: #ff7235;
+          transition: transform 0.3s ease;
+        }
+
+        .pill:hover {
+          transform: translateY(-6px) scale(1.07);
+          box-shadow: 0 18px 45px rgba(255, 114, 53, 0.25);
+        }
+
+        .pill:hover i {
+          transform: rotate(12deg);
+        }
+
+        .pill .desc {
+          font-size: 0.85rem;
+          font-weight: 400;
+          color: #64748b;
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .pill .desc {
+            display: inline;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .marquee-track {
+            animation-duration: 55s;
+          }
+        }
+      </style>
     </section>
 
     <section class="py-24 bg-[#1A1D2E] text-white overflow-hidden relative">
