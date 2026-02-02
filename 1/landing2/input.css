@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "tailwindcss";
+
+@theme {
+  /* Font Family */
+  --font-sans: "Inter", "sans-serif";
+
+  /* Custom Colors */
+  --color-bg-light: #f8fafc;
+  --color-bg-mid: #f1f5f9;
+  --color-text-dark: #0f172a;
+  --color-text-mid: #475569;
+
+  --color-secondary: #2563eb;
+  --color-secondary-dark: #1e40af;
+  --color-secondary-light: #dbeafe;
+
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
+}
