@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0D9488;
-            --primary-hover: #0F766E;
-            --dark: #134E4A;
-            --near-black: #0F172A;
-            --body-text: #475569;
-            --muted: #64748B;
+            --primary: #fd6320;
+            --primary-hover: #e45112;
+            --dark: #0F172A;
+            --near-black: #0B1222;
+            --body-text: #4B5563;
+            --muted: #94A3B8;
             --white: #FFFFFF;
-            --light-bg: #F0FDFA;
-            --border: #E2E8F0;
+            --light-bg: #F9FAFB;
+            --accent-tint: #FFF0E6;
+            --border: #E5E7EB;
+            --shadow: 0 10px 30px -10px rgba(253, 99, 32, 0.3);
         }
 
         * {
@@ -37,18 +39,18 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 96rem;
             margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
+            padding: 0 24px;
         }
 
         header {
-            background-color: var(--near-black);
-            padding: 20px 0;
+            background-color: var(--white);
+            padding: 14px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
         .header-content {
@@ -57,12 +59,31 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--white);
+        .logo img {
+            height: 36px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .phone-link {
             text-decoration: none;
-            letter-spacing: -0.5px;
+            color: var(--near-black);
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .phone-link:hover {
+            color: var(--primary);
         }
 
         main {
@@ -72,26 +93,22 @@
             justify-content: center;
             padding: 100px 20px;
             text-align: center;
+            background-color: var(--light-bg);
         }
 
         .thank-you-card {
             max-width: 600px;
             padding: 60px;
-            background: var(--light-bg);
-            border-radius: 24px;
+            background: var(--white);
+            border-radius: 32px;
             border: 1px solid var(--border);
-        }
-
-        .icon {
-            font-size: 64px;
-            margin-bottom: 24px;
-            display: inline-block;
+            box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.08);
         }
 
         h1 {
             font-size: 40px;
             font-weight: 800;
-            color: var(--dark);
+            color: var(--near-black);
             margin-bottom: 16px;
             line-height: 1.2;
         }
@@ -103,60 +120,130 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--primary);
             color: var(--white);
             font-weight: 700;
-            padding: 16px 40px;
-            border-radius: 8px;
+            font-size: 16px;
+            padding: 0 44px;
+            height: 64px;
+            border-radius: 14px;
             text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             background-color: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(253, 99, 32, 0.5);
         }
 
         footer {
-            background-color: var(--near-black);
-            padding: 40px 0;
+            background: var(--near-black);
             color: var(--white);
+            padding: 100px 0 50px;
         }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            text-align: center;
-            font-size: 14px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 100px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand p {
+            margin-top: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 400px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: var(--white);
+            text-align: left;
+        }
+
+        .footer-contact p {
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: left;
+        }
+
+        .footer-contact a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--primary);
         }
 
         .footer-bottom {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            width: 100%;
+            padding-top: 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-links a {
+            color: inherit;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
         }
 
         @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 15px;
+            }
+
             h1 {
                 font-size: 32px;
             }
             .thank-you-card {
                 padding: 40px 20px;
             }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
+        }
+
+        @media (max-width: 640px) {
+            .phone-link {
+                display: none;
+            }
+            .logo img {
+                height: 28px;
+            }
+            .header-content .btn {
+                padding: 0 24px;
+                height: 48px;
+                font-size: 14px;
             }
         }
     </style>
@@ -170,32 +257,42 @@
 <body>
     <header>
         <div class="container header-content">
-            <a href="/" class="logo">Wisdora</a>
+            <a href="performance-marketing-services.html" class="logo"><img src="Wisdora_2.png" alt="Wisdora"></a>
+            <div class="top-bar-right">
+                <a href="tel:+919833729591" class="phone-link">+91 98337 29591</a>
+                <a href="performance-marketing-services.html" class="btn" style="height: 56px;">Contact Us Now →</a>
+            </div>
         </div>
     </header>
 
     <main>
         <div class="thank-you-card">
-            <span class="icon">✅</span>
+            <div style="font-size: 64px; margin-bottom: 24px; color: var(--primary);">✓</div>
             <h1>Thank You!</h1>
             <p>Your request has been received. A senior strategist from our Performance Marketing team will reach out to you within 24 hours to schedule your strategy call.</p>
-            <a href="/" class="btn">Back to Home</a>
+            <a href="performance-marketing-services.html" class="btn">Back to Home</a>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>Wisdora — Performance Marketing for Businesses That Demand Results.</p>
-                <div class="contact-info">
-                    Phone: +91-9833729591 | Email: info@wisdora.com
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="performance-marketing-services.html" class="logo"><img src="Wisdora_2_light.png" alt="Wisdora"></a>
+                    <p>Performance Marketing for Businesses That Demand Results. We bridge the gap between ad spend and
+                        measurable revenue.</p>
                 </div>
+                <address class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><a href="tel:+919833729591">+91 98337 29591</a></p>
+                    <p><a href="mailto:info@wisdora.com">info@wisdora.com</a></p>
+                </address>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 Wisdora. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="#" style="color: inherit; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
-                    <a href="#" style="color: inherit; text-decoration: none; margin: 0 10px;">Terms of Service</a>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
