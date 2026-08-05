@@ -222,29 +222,25 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 // -------------------------
 // 3. Form Validation & Redirect
 // -------------------------
-document.getElementById("form")?.addEventListener("submit", function (e) {
-  e.preventDefault();
+// document.getElementById("form")?.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const requiredFields = document.querySelectorAll("#form .required");
-  let isValid = true;
-  const formData = {};
+//   const requiredFields = document.querySelectorAll("#form .required");
+//   let isValid = true;
+//   const formData = {};
 
-  requiredFields.forEach((field) => {
-    if (!field.value) {
-      isValid = false;
-      field.style.border = "1px solid red";
-    } else {
-      field.style.border = "1px solid #ccc";
-      formData[field.name] = field.value;
-    }
-  });
+//   requiredFields.forEach((field) => {
+//     if (!field.value) {
+//       isValid = false;
+//       field.style.border = "1px solid red";
+//     } else {
+//       field.style.border = "1px solid #ccc";
+//       formData[field.name] = field.value;
+//     }
+//   });
 
-  if (!isValid) {
-    alert("Please fill all required fields");
-    return;
-  }
-
-  // Redirect on successful validation
-  window.location.href =
-    "https://wisdora.vercel.app/thank-you-custom-elearning-solution.html";
-});
+//   if (!isValid) {
+//     alert("Please fill all required fields");
+//     return;
+//   }
+// });

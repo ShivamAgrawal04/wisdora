@@ -126,36 +126,36 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollElements.forEach((el) => scrollObserver.observe(el));
   }
 
-  /* ============================================================
-   * 6. Form Validation & Submission
-   * ============================================================ */
-  const form = document.getElementById("form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+  // /* ============================================================
+  //  * 6. Form Validation & Submission
+  //  * ============================================================ */
+  // const form = document.getElementById("form");
+  // if (form) {
+  //   form.addEventListener("submit", (e) => {
+  //     e.preventDefault();
 
-      const requiredFields = form.querySelectorAll(".required");
-      let isValid = true;
-      const formData = {};
+  //     const requiredFields = form.querySelectorAll(".required");
+  //     let isValid = true;
+  //     const formData = {};
 
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.style.border = "1px solid red";
-        } else {
-          field.style.border = "1px solid #ccc";
-          formData[field.name] = field.value.trim();
-        }
-      });
+  //     requiredFields.forEach((field) => {
+  //       if (!field.value.trim()) {
+  //         isValid = false;
+  //         field.style.border = "1px solid red";
+  //       } else {
+  //         field.style.border = "1px solid #ccc";
+  //         formData[field.name] = field.value.trim();
+  //       }
+  //     });
 
-      if (!isValid) {
-        alert("Please fill all required fields");
-        return;
-      }
+  //     if (!isValid) {
+  //       alert("Please fill all required fields");
+  //       return;
+  //     }
 
-      // Redirect to thank you page
-      window.location.href =
-        "https://wisdora.vercel.app/thank-you-learning-management-system-development.html";
-    });
-  }
+  //     // Redirect to thank you page
+  //     window.location.href =
+  //       "https://wisdora.vercel.app/thank-you-learning-management-system-development.html";
+  //   });
+  // }
 });
